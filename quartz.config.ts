@@ -28,29 +28,29 @@ const config: QuartzConfig = {
         code: "IBM Plex Mono",
       },
       colors: {
-        lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
-        },
-        darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
-        },
-      },
+          lightMode: {
+              light: "#e0def4",          // surface1
+              lightgray: "#cdd6f4",      // surface2
+              gray: "#9ca0b0",           // overlay0
+              darkgray: "#575268",       // base
+              dark: "#1e1e2e",           // mantle
+              secondary: "#569fba",      // blue
+              tertiary: "#9ccfd8",       // teal
+              highlight: "rgba(108, 153, 187, 0.15)",  // adjusted blue highlight
+              textHighlight: "#f6c17788", // orange/yellow-ish highlight
+          },
+          darkMode: {
+              light: "#1e1e2e",          // mantle
+              lightgray: "#2f2e3e",      // base
+              gray: "#6e6c7e",           // overlay1
+              darkgray: "#cdd6f4",       // surface2
+              dark: "#e0def4",           // surface1
+              secondary: "#569fba",      // blue
+              tertiary: "#9ccfd8",       // teal
+              highlight: "rgba(108, 153, 187, 0.15)",  // same as lightMode
+              textHighlight: "#f6c17788", // orange/yellow-ish
+          },
+      }
     },
   },
   plugins: {
