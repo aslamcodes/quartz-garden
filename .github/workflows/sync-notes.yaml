@@ -13,7 +13,7 @@ jobs:
 
       - name: Pull latest notes
         run: |
-          git clone https://github.com/your-username/notes-repo notes
+          git clone https://github.com/aslamcodes/brain-cache notes
           cp -r notes/path-to-md ./content
 
       - name: Commit & Push if changed
