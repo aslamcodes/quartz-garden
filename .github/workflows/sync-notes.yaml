@@ -1,0 +1,25 @@
+# .github/workflows/sync-notes.yml
+name: Sync Notes and Deploy
+
+on:
+  repository_dispatch:
+    types: [sync-notes]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Pull latest notes
+        run: |
+          git clone https://github.com/your-username/notes-repo notes
+          cp -r notes/path-to-md ./content
+
+      - name: Commit & Push if changed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "Update notes"
+          git push
