@@ -15,8 +15,18 @@ jobs:
           token: ${{ secrets.PAT }}
           ref: main  
 
-      - name: Empty Commit
+      - name: Pull latest notes
         run: |
-          git commit --allow-empty -m "Empty Trigger"
+          git clone https://github.com/aslamcodes/brain-cache
+          rsync -av --exclude='.git' --exclude='.obsidian' brain-cache/ ./content
+          rm -rf brain-cache
+
+      - name: Commit & Push if changed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git checkout main
+          git add .
+          git diff --cached --quiet || git commit -m "Update notes"
           git pull origin main --rebase
           git push origin main
